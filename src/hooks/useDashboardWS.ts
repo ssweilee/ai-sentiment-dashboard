@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { connectWS, onWS, closeWS } from "@/utils/ws";
 import { AnalysisItem, Stats, TrendChartPoint } from "@/types/types";
 
@@ -17,6 +17,9 @@ export function useDashboardWS(
   setInsight: React.Dispatch<React.SetStateAction<string | null>>,
   setProgress: React.Dispatch<React.SetStateAction<{ completedBatches: number; totalBatches: number }>>,
 ) {
+  const refs = useRef({ setData, setChartData, setStats, setInsight, setProgress });
+  refs.current = { setData, setChartData, setStats, setInsight, setProgress };
+
   useEffect(() => {
     // establish WebSocket connection
     connectWS();
@@ -24,7 +27,7 @@ export function useDashboardWS(
     // listen for batch completion updates
     const unsubBatch = onWS("batch_completed", (payload: { [key: string]: unknown }) => {
       console.log("WS batch_completed", payload);
-      setProgress((p) => ({ ...p, completedBatches: p.completedBatches + 1 }));
+      refs.current.setProgress((p) => ({ ...p, completedBatches: p.completedBatches + 1 }));
     });
 
     // listen for insight completion
@@ -56,8 +59,8 @@ export function useDashboardWS(
           total: 0,
         }
       );      
-      setChartData(payload.trend || []);
-      setProgress(payload.progress || { completedBatches: 0, totalBatches: 0 });
+      refs.current.setChartData(payload.trend || []);
+      refs.current.setProgress(payload.progress || { completedBatches: 0, totalBatches: 0 });
     });
 
     return () => {
@@ -65,5 +68,5 @@ export function useDashboardWS(
       unsubInsight && unsubInsight();
       closeWS();
     };
-  }, [setData, setChartData, setStats, setInsight, setProgress]);
+  }, []);
 }
