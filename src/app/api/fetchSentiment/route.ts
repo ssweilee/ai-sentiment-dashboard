@@ -6,10 +6,12 @@ interface LambdaResponse {
 }
 
 export async function GET(req: Request) {
+  console.log("ALL ENV:", process.env);
+
   const { searchParams } = new URL(req.url);
   const keyword = searchParams.get("keyword") || "";
 
-  const lambdaUrl = process.env.LAMBDA_A_URL; 
+  const lambdaUrl = process.env.NEXT_PUBLIC_LAMBDA_A_URL; 
   console.log("LAMBDA_A_URL=", lambdaUrl);
   if (!lambdaUrl) {
     console.error("LAMBDA_A_URL is not defined in environment variables!");
