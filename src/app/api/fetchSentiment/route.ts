@@ -10,8 +10,9 @@ export async function GET(req: Request) {
   const keyword = searchParams.get("keyword") || "";
 
   const lambdaUrl = process.env.LAMBDA_A_URL; 
+  console.log("LAMBDA_A_URL=", lambdaUrl);
   if (!lambdaUrl) {
-    console.error("❌ LAMBDA_A_URL is not defined in environment variables!");
+    console.error("LAMBDA_A_URL is not defined in environment variables!");
     return NextResponse.json({ error: "Missing LAMBDA_A_URL" }, { status: 500 });
   }
 
@@ -43,7 +44,7 @@ export async function GET(req: Request) {
     );
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
-    console.error("❌ Fetch error:", message);
+    console.error("Fetch error:", message);
     return NextResponse.json(
       { error: message }, 
       {
