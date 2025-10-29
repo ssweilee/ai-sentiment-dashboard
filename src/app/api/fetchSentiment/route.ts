@@ -18,16 +18,42 @@ export async function GET(req: Request) {
   try {
     const aResponse = await fetch(`${lambdaUrl}?keyword=${encodeURIComponent(keyword)}`);
     const aData = await aResponse.json();
-    const numBatches = typeof aData.message === "string" 
-                      ? parseInt(aData.message.replace(/\D/g,''), 10)
-                      : aData.message || 0;
-    return NextResponse.json({
+
+    let numBatches = 0;
+    if (typeof aData.message === "number") {
+      numBatches = aData.message;
+    } else if (typeof aData.message === "string") {
+      const match = aData.message.match(/\d+/);
+      numBatches = match ? parseInt(match[0], 10) : 0;
+    }
+    
+    return NextResponse.json(
+      {
       message: "Analysis scheduled, please check progress via WebSocket.",
       batches: numBatches, // only return the number of batches, actual analysis results will be sent via WebSocket
-    });
+      },
+      {
+        status: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      }
+    );
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
     console.error("❌ Fetch error:", message);
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json(
+      { error: message }, 
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      }
+    );
   }
 }
