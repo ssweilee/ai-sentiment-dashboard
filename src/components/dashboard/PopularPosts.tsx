@@ -5,6 +5,12 @@ interface Props {
   posts: AnalysisItem[];
 }
 
+function decodeHtml(html: string) {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
+
 export const PopularPosts: React.FC<Props> = ({ posts }) => (
   <div className="bg-white border rounded-lg p-5 shadow-sm">
     <h2 className="text-lg font-semibold mb-3">Popular Posts</h2>
@@ -14,7 +20,7 @@ export const PopularPosts: React.FC<Props> = ({ posts }) => (
           <li key={idx}>
             <span className="font-medium text-gray-900">[{p.sentiment}]</span>{" "}
             <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-              {p.title}
+              {decodeHtml(p.title)} 
             </a>{" "}
             <span className="text-gray-500 text-sm">({p.source})</span>
           </li>
