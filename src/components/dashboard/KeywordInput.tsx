@@ -25,7 +25,7 @@ export const KeywordInput: React.FC<KeywordInputProps> = ({
       <div className="relative flex-1">
         <input
           type="text"
-          placeholder="Enter keyword (e.g. TV show, brand, topic)..."
+          placeholder="Enter keyword (e.g. TV show, movie, series)..."
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
           onFocus={() => setShowHistory(true)}
