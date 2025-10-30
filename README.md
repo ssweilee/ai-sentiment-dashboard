@@ -46,6 +46,27 @@ Marketing and content teams can use this dashboard to:
 
 ---
 
+## 🧠 System Architecture
+
+<pre>
+Frontend (Next.js)
+       ↓
+API Routes (Next.js)
+       ↓
+AWS API Gateway
+       ↓
+Lambda fetch → SQS → Lambda analyze → AWS Bedrock → S3
+       ↓ (S3 trigger)
+Lambda generate → aggregate insights → S3
+       ↓
+Frontend renders insights
+</pre>
+
+
+
+
+---
+
 ## 📈 Key Results
 * Reduced data processing latency by **75%** via asynchronous processing.
 * Delivered **visualizations** for actionable audience insights.
@@ -71,3 +92,4 @@ Marketing and content teams can use this dashboard to:
 
 🧑‍💻 Author
 Developed independently by **Sandy Lee**, demonstrating applied AI, cloud computing, and full-stack development.
+
