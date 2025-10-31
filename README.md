@@ -19,7 +19,7 @@ _AI-powered dashboard for audience sentiment, trend analysis & engagement insigh
 * **Interactive Dashboard:** Recharts & TailwindCSS for engagement trends.
 * **Serverless Backend:** AWS Lambda + SQS for scalable, asynchronous processing.
 * **Reliable Storage & Deployment:** S3/DynamoDB + AWS Amplify.
-* **Automated Deployment** – AWS Amplify with CI/CD pipeline deployment.
+* **Automated Deployment:** AWS Amplify with CI/CD pipeline deployment.
 
 
 ---
@@ -72,6 +72,9 @@ Frontend renders insights
 
 ---
 
+## Getting Started
+The live demo is private due to usage limits, feel free to contact me for access :)
+
 ## 🤖 Future Improvements
 * Complete NLP preprocessing pipeline.
 * Microservice architecture for sentiment analysis & data fetching
@@ -82,6 +85,7 @@ Frontend renders insights
 
 🧑‍💻 Author
 Developed independently by **Sandy Lee**, demonstrating applied AI, cloud computing, and full-stack development.
+
 
 
 
