@@ -59,7 +59,7 @@ Frontend renders insights
 ---
 
 ## 📈 Key Results
-* Reduced data processing latency by **~70-75%** via asynchronous processing.
+* Reduced data processing latency by **~75%** via asynchronous processing.
 * Delivered **user-friendly visual** dashboards for actionable audience insights.
 * Demonstrated a **production-ready serverless AI pipeline** for scalable cloud deployment.
 
@@ -69,11 +69,6 @@ Frontend renders insights
 * Social media sentiment monitoring for content producers.
 * Facilitates data-driven decision making for marketing and release strategies. 
 * Supports scalable deployment for future series/film monitoring across global markets.
-
----
-
-## Getting Started  
-(For security reasons,......)
 
 ---
 
@@ -87,6 +82,7 @@ Frontend renders insights
 
 🧑‍💻 Author
 Developed independently by **Sandy Lee**, demonstrating applied AI, cloud computing, and full-stack development.
+
 
 
 
