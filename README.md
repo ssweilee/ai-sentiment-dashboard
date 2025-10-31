@@ -1,7 +1,8 @@
 # Audience Sentiment & Trend Dashboard
 
 _AI-powered dashboard for audience sentiment, trend analysis & engagement insights (films & TV series)._
-
+<br></br>
+![Dashboard Demo](./dashboard-screenshot.svg)
 
 ---
 
@@ -86,6 +87,7 @@ Frontend renders insights
 
 🧑‍💻 Author
 Developed independently by **Sandy Lee**, demonstrating applied AI, cloud computing, and full-stack development.
+
 
 
 
