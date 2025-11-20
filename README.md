@@ -6,14 +6,14 @@ _AI-powered dashboard for audience sentiment, trend analysis & engagement insigh
 
 ---
 
-## 💡 Use Case
+## Use Case
 * Monitor audience reactions during releases.
 * Identify trending topics & sentiment shifts.
 * Support data-driven decisions for content producers and marketing teams
   
 ---
 
-## 🧩 Key Features
+## Key Features
 
 * **AI Insights:** NLP & sentiment analysis via AWS Bedrock.
 * **Interactive Dashboard:** Recharts & TailwindCSS for engagement trends.
@@ -24,7 +24,7 @@ _AI-powered dashboard for audience sentiment, trend analysis & engagement insigh
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 | Category | Technologies |
 |-----------|---------------|
@@ -36,7 +36,7 @@ _AI-powered dashboard for audience sentiment, trend analysis & engagement insigh
 
 ---
 
-## 🧠 System Architecture
+## System Architecture
 
 <pre>
 Frontend (Next.js)
@@ -58,14 +58,14 @@ Frontend renders insights
 
 ---
 
-## 📈 Key Results
+## Key Results
 * Reduced data processing latency by **~75%** via asynchronous processing.
 * Delivered **user-friendly visual** dashboards for actionable audience insights.
 * Demonstrated a **production-ready serverless AI pipeline** for scalable cloud deployment.
 
 ---
 
-## 💼 Business Impact
+## Business Impact
 * Social media sentiment monitoring for content producers.
 * Facilitates data-driven decision making for marketing and release strategies. 
 * Supports scalable deployment for future series/film monitoring across global markets.
@@ -75,7 +75,7 @@ Frontend renders insights
 ## Getting Started
 The live demo is private due to usage limits, feel free to contact me for access :)
 
-## 🤖 Future Improvements
+## Future Improvements
 * Complete NLP preprocessing pipeline.
 * Microservice architecture for sentiment analysis & data fetching
 * Enhance charts with drill-down, filters (weekly / monthly / yearly) and live streaming updates
@@ -85,6 +85,7 @@ The live demo is private due to usage limits, feel free to contact me for access
 
 🧑‍💻 Author
 Developed independently by **Sandy Lee**, demonstrating applied AI, cloud computing, and full-stack development.
+
 
 
 
