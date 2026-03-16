@@ -59,7 +59,7 @@ Frontend renders insights
 ---
 
 ## Key Results
-* Reduced data processing latency by **~75%** via asynchronous processing.
+* Reduced data processing latency by **~83% (from ~3 minutes to <30 seconds)** via asynchronous processing.
 * Delivered **user-friendly visual** dashboards for actionable audience insights.
 * Demonstrated a **production-ready serverless AI pipeline** for scalable cloud deployment.
 
